@@ -12,7 +12,7 @@ from pydantic import BaseModel
 
 class Push(BaseModel):
     # 是否开启推送 默认关闭
-    PUSH_OR_NOR: bool = False
+    PUSH_OR_NOR: bool = True
     # PUSHPLUS的TOKEN
     PUSHPLUS_TOKEN: str = None
 
