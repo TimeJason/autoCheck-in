@@ -38,7 +38,7 @@
 
 #### 🙍🏻‍♀️腾讯视频配置流程
 
-1. Fork 本仓库，然后点击你的仓库右上角的 Settings，找到 Secrets 这一项actions，添加 `LOGIN_COOKIE` 、`LOGIN_URL`、 `LOGIN_URL_PAYLOADLOAD`、`PUSHPLUS_TOKEN`、`GET_VIP_INFO_URL_PAYLOAD`五个Secrets。
+1. Fork 本仓库，然后点击你的仓库右上角的 Settings，找到 Secrets 这一项actions，添加 `LOGIN_COOKIE` 、`LOGIN_URL`、 `LOGIN_URL_PAYLOADLOAD`、`PUSHPLUS_TOKEN`、`GET_VIP_INFO_URL_PAYLOAD`五个Secrets并填写对应的值，前两个`LOGIN_COOKIE` 、`LOGIN_URL`为必须，后面三个如果失败可添加。
 
    ![image-20230806202139340](README.assets/image-20230806202139340.png)
 
@@ -81,10 +81,13 @@
 5. 获取配置信息的效果图如下：
 ![获取配置信息](./img/1.jpg)
 
-5. 或者登录成功之后F12，F5依次输入，然后搜索NewRefresh，这个url就是`LOGIN_URL`， `LOGIN_URL_PAYLOADLOAD`就是这个url的请求体。
-6. `PUSHPLUS_TOKEN`公众号pushplus获取
+5. 或者登录成功之后F12（点Network），F5（刷新）依次输入，然后搜索NewRefresh
+   这个url就是`LOGIN_URL`（一般是https://xxx.xxx.xxx/NewRefresh）
+   `LOGIN_URL_PAYLOADLOAD`就是这个url的请求体。(比如{"type":"qq","si":{"h38":"xxxxxxxx","q36":"","s":"xxxxx","o_data":"g=xxxx"}})
+7. `PUSHPLUS_TOKEN`公众号pushplus获取
 
 > - 注意：
+> - 建议直接使用手机端抓的`LOGIN_COOKIE`，如何在手机端抓包可自行百度
 >   - 如果报错没有通过图像验证，需要在cookie中加入vdevice_qimei36='...'[使用常用手机打开获取](https://m.v.qq.com/schemeurl)。
 >   - 加上使用一段时间之后，又出现图形验证，需要手动签到一次。
 
